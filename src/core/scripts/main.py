@@ -3,7 +3,6 @@ import actionlib
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
 from smach import State, StateMachine
 from std_msgs.msg import String
-from time import sleep
 from sensor_msgs.msg import Image
 import cv2 as cv
 from cv_bridge import CvBridge, CvBridgeError

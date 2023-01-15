@@ -41,4 +41,4 @@ Patrol mode is activated while the robot is not delivering any packages. The rob
 The camera is activated by default when the script is run. It is used for monitoring the robot and for surveillance in patrol mode.
 
 # Authors
-- Pablo García
+- Pablo García Gómez

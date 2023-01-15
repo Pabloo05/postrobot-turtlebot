@@ -4,6 +4,9 @@ In this repository you can find the code of the project of the subject "Mobile R
 # Description
 This project consists of a robot that has to move around a map and deliver a package to a specific point. The robot has to avoid obstacles and follow the path to the destination. In the meantime, the robot patrols the map going from one point to another.
 
+# Demo
+https://user-images.githubusercontent.com/63607884/212547884-883b64c8-36ec-46ef-9df1-d304bfb8fc16.mp4
+
 # Requirements
 - Turtlebot3 Waffle (`export TURTLEBOT3_MODEL=waffle`)
   

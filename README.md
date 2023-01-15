@@ -4,6 +4,9 @@ In this repository you can find the code of the project of the subject "Mobile R
 # Description
 This project consists of a robot that has to move around a map and deliver a package to a specific point. The robot has to avoid obstacles and follow the path to the destination. In the meantime, the robot patrols the map going from one point to another.
 
+# Requirements
+- Turtlebot3 Waffle
+  
 # Installation
 
 In order to install this package, you need run the following commands:
@@ -29,9 +32,13 @@ To use the delivery mode, you must post a message in the "delivery" topic with t
 rostopic pub /delivery std_msgs/String "data: 'o1'"
 ```
 With this command, the robot will go to point "o1" and deliver the package.
+The points are defined in offices list in the main.py file.
 
 ## Patrol mode
-Patrol mode is activated while the robot is not delivering any packages. The robot will go from one point to another to patrol the map.
+Patrol mode is activated while the robot is not delivering any packages. The robot will go from one point to another to patrol the map. The points are defined in waypoints list in the main.py file.
+
+## Camera
+The camera is activated by default when the script is run. It is used for monitoring the robot and for surveillance in patrol mode.
 
 # Authors
 - Pablo García

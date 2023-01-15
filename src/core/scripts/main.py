@@ -4,6 +4,12 @@ from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
 from smach import State, StateMachine
 from std_msgs.msg import String
 from time import sleep
+from sensor_msgs.msg import Image
+import cv2 as cv
+from cv_bridge import CvBridge, CvBridgeError
+
+frame_ = Image()
+bridge = CvBridge()
 
 target = ''
 index = 0
@@ -99,6 +105,19 @@ def callback(data):
             break
     target = data.data 
     
+def camera_cb(data):
+    global frame_, bridge
+    frame_ = data
+    try:
+        cv_image = bridge.imgmsg_to_cv2(frame_, "bgr8")
+        cv_image = cv.resize(cv_image, (640, 480))
+        cv.imshow("Robot Camera", cv_image)
+        cv.waitKey(3)
+    except CvBridgeError as e:
+        print(e)
+
+    
+rospy.Subscriber("/camera/rgb/image_raw", Image, camera_cb)
     
 
 if __name__ == "__main__":
